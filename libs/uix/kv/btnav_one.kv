@@ -1,0 +1,86 @@
+<BTNavOne>
+
+    MDFillRoundFlatIconButton:
+        #:import Snackbar kivymd.uix.snackbar.Snackbar
+        text: "INFO"
+        icon: "help"
+        md_bg_color: app.theme_cls.primary_color
+        elevation_normal: 10
+        pos_hint: {'center_x':0.1,'center_y':0.1}
+        on_release: Snackbar(text = "Per ulteriori informazioni visita il sito: www.girtech.com").open()
+
+    MDTextFieldRect:
+        id: txt1
+        size_hint: 0.5, None
+        hint_text: "Inserire Hostname"
+        height: "30dp"
+        required: True
+        pos_hint: {'center_x':0.5,'center_y':0.7}
+        multiline: False
+        on_text_validate:
+            txt2.focus = True
+
+    MDTextFieldRect:
+        id: txt2
+        size_hint: 0.5, None
+        hint_text: "Inserire Password"
+        height: "30dp"
+        password: True
+        pos_hint: {'center_x':0.5,'center_y':0.6}
+        multiline: False
+        on_text_validate:
+            txt3.focus = True
+
+    MDTextFieldRect:
+        id: txt3
+        size_hint: 0.5, None
+        hint_text: "Inserire Indirizzo IP (Gateway)"
+        height: "30dp"
+        required:
+        pos_hint: {'center_x':0.5,'center_y':0.5}
+        multiline: False
+        on_text_validate:
+            txt4.focus = True
+
+    MDTextFieldRect:
+        id: txt4
+        size_hint: 0.5, None
+        hint_text: "Subnet Mask"
+        height: "30dp"
+        required:
+        pos_hint: {'center_x':0.5,'center_y':0.4}
+        multiline: False
+
+    MDLabel:
+        text: "Benvenuto alla configurazione del router situato all'ingresso"
+        text_size: self.width, self.height
+        halign: "center"
+        valign: "top"
+        font_style: "H5"
+
+    MDFloatingActionButtonSpeedDial:
+        data: app.data
+        root_button_anim: True
+
+    MDSwitch:
+        pos_hint: {'center_x': 0.3, 'center_y': 0.85}
+
+    Label:
+        text: "Abilita rete"
+        pos_hint: {'center_x': 0.22, 'center_y': 0.85}
+
+    MDCheckbox:
+        size_hint: None, None
+        size: "48dp", "48dp"
+        pos_hint: {'center_x': 0.7, 'center_y': 0.85}
+
+    Label:
+        text: "Conserva modifiche"
+        pos_hint: {'center_x': 0.59, 'center_y': 0.85}
+
+    MDRoundFlatIconButton:
+        icon: "close"
+        text: "Chiudi App"
+        md_bg_color: app.theme_cls.primary_color
+        pos_hint: {'center_x': 0.8, 'center_y': 0.1}
+        on_press: app.dismiss

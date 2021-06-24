@@ -1,0 +1,28 @@
+#: import BTNavOne libs.uix.baseclass.btnav_one.BTNavOne
+#: import BTNavTwo libs.uix.baseclass.btnav_two.BTNavTwo
+#: import BTNavThree libs.uix.baseclass.btnav_three.BTNavThree
+
+<HomeScreen>
+    MDBoxLayout:
+        orientation: "vertical"
+
+        MDToolbar:
+            title: "Configurazione dei router"
+            right_action_items: [["dots-vertical", lambda x: x]]
+
+        MDBottomNavigation:
+
+            BTNavOne:
+                name: "one"
+                text: "Ingresso"
+                icon: "home-import-outline"
+
+            BTNavTwo:
+                name: "two"
+                text: "Riunioni"
+                icon: "monitor-cellphone"
+
+            BTNavThree:
+                name: "three"
+                text: "Capo"
+                icon: "account-tie"
